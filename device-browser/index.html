@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- METATAGS -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-US" />
+    <title>Device Browser</title>
+
+    <style>
+        * {
+            -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing:border-box; box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        html {
+            background-image: -webkit-radial-gradient(center center, circle cover, #ffffff, #cfcfcf 100%);
+            background-image:    -moz-radial-gradient(center center, circle cover, #ffffff, #cfcfcf 100%);
+            background-image:     -ms-radial-gradient(center center, circle cover, #ffffff, #cfcfcf 100%);
+            background-image:      -o-radial-gradient(center center, circle cover, #ffffff, #cfcfcf 100%);
+            background-image:         radial-gradient(center center, circle cover, #ffffff, #cfcfcf 100%);
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        h1 {
+            line-height: 200%;
+            margin: 30px auto;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+    </style>
+
+    <script>
+        function myFunction()
+        {
+            document.getElementById('iframe').src = document.getElementById('url').value;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function reply_click(clicked_id)
+        {
+            var element = document.getElementById("device");
+            element.setAttribute("data-device", clicked_id);
+
+            var element = document.getElementById("body");
+            element.setAttribute("data-device", clicked_id);
+        }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="./../device-mockups/device-mockups2.css" />
+    <link rel="stylesheet" type="text/css" href="css/browser.css" />
+</head>
+
+<body id="body" data-device="macbook">
+
+<h1>Device Browser</h1>
+<div style="text-align: center">
+    <div class="input-group">
+        <input id="url" class="form-control" name="url" type="text" />
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" onclick="myFunction()">Go</button>
+              </span>
+    </div>
+
+    <div class="btn-group">
+        <button id="iphone5" class="btn btn-primary" onClick="reply_click(this.id)">iPhone</button>
+        <button id="macbook" class="btn btn-primary" onClick="reply_click(this.id)">Macbook</button>
+    </div>
+
+</div>
+
+<div id="frame">
+    <div id="device" class="device-mockup" data-device="macbook">
+        <div class="device">
+            <div class="screen">
+                <iframe id="iframe" src="http://www.lokalepolitie.be/5388" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="button">
+                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

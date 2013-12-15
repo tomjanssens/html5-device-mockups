@@ -1,0 +1,106 @@
+// Core variables and mixins
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/variables";
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/mixins";
+
+// Reset
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/normalize";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/print";
+
+// Core CSS
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/scaffolding";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/type";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/code";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/grid";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/tables";
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/forms";
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/buttons";
+
+// Components
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/component-animations";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/glyphicons";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/dropdowns";
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/button-groups";
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/input-groups";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/navs";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/navbar";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/breadcrumbs";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/pagination";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/pager";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/labels";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/badges";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/jumbotron";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/thumbnails";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/alerts";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/progress-bars";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/media";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/list-group";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/panels";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/wells";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/close";
+
+// Components w/ JavaScript
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/modals";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/tooltip";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/popovers";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/carousel";
+
+// Utility classes
+@import "../../vendor/jlong/sass-twitter-bootstrap/lib/utilities";
+//@import "../../vendor/jlong/sass-twitter-bootstrap/lib/responsive-utilities";
+
+body {
+    max-width: 1000px;
+}
+
+body[data-device="iphone5"] {
+    #frame {
+        width: 400px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    iframe {
+        /*zoom: 0.75;*/
+        /*-moz-transform: scale(0.75);*/
+        /*-moz-transform-origin: 0 0;*/
+        /*-o-transform: scale(0.75);*/
+        /*-o-transform-origin: 0 0;*/
+        -webkit-transform: scale(0.952);
+        -webkit-transform-origin: 0 0;
+
+        width: 320px;
+        height: 567px;
+    }
+}
+
+body[data-device="macbook"] {
+    #frame {
+        width: 1000px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .device {
+        background-size: 1000px 618px;
+    }
+
+    iframe {
+        $screen_width: 732;
+        $screen_height: 459;
+
+        $device_width: 1024;
+
+        $scale: $screen_width / $device_width;
+
+        //        zoom: $scale;
+        -moz-transform: scale($scale);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale($scale);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale($scale);
+        -webkit-transform-origin: 0 0;
+
+        width: $device_width * 1px;
+        height: (($device_width / $screen_width) * $screen_height) * 1px;
+    }
+}
